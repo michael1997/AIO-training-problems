@@ -1,0 +1,12 @@
+file  = open("bendin.txt", "r")
+x1, y1, x2, y2 = file.readline().split()
+x1_2, y1_2, x2_2, y2_2 = file.readline().split()
+file.close()
+
+square1 = (int(x2)-int(x1)) * (int(y2) - int(y1))
+square2 = (int(x2_2)-int(x1_2)) * (int(y2_2) - int(y1_2))
+area = square1 + square2 - max(0, min(int(x2)-int(x1_2), int(x2_2)-int(x1))
+                               * min(int(y2)-int(y1_2), int(y2_2)- int(y1)))
+file = open("bendout.txt", "w")
+file.write(str(area))
+file.close()
