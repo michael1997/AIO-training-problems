@@ -1,0 +1,11 @@
+file  = open("sitin.txt", "r")
+rows, columns = file.readline().split()
+people = int(file.readline())
+file.close()
+
+seats = int(rows) * int(columns)
+sitting = min(seats, people)
+standing = max(0, people-seats)
+file = open("sitout.txt", "w")
+file.write(str(sitting) + " " + str(standing))
+file.close()
